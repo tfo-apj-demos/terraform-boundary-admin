@@ -12,8 +12,11 @@ terraform {
 }
 
 provider "boundary" {
-  addr = "https://e0078f32-6a05-44fe-a147-158f9d15a5fb.boundary.hashicorp.cloud"
-}
+  addr = var.boundary_addr
+  auth_method_login_name = var.boundary_username
+  auth_auth_method_password = var.boundary_password
+  auth_method_id = var.boundary_auth_method_id
+
 
 provider "tfe" {
   organization = "tfo-apj-demo"
