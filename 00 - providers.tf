@@ -11,5 +11,10 @@ terraform {
   }
 }
 
-provider "boundary" {}
-provider "tfe" {}
+provider "boundary" {
+  addr = "https://e0078f32-6a05-44fe-a147-158f9d15a5fb.boundary.hashicorp.cloud"
+}
+
+provider "tfe" {
+  organization = "tfo-apj-demo"
+}
