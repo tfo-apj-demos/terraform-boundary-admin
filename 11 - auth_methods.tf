@@ -5,7 +5,7 @@ locals {
 }
 
 resource "boundary_auth_method_oidc" "team_se" {
-  scope_id = boundary_org.tfo_apj_demo.id
+  scope_id = boundary_scpope.tfo_apj_demo.id
   issuer = local.issuer
   client_id = local.client_id
   client_secret = local.client_secret
