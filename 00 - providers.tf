@@ -16,7 +16,7 @@ provider "boundary" {
   auth_method_login_name = var.boundary_username
   auth_auth_method_password = var.boundary_password
   auth_method_id = var.boundary_auth_method_id
-
+}
 
 provider "tfe" {
   organization = "tfo-apj-demo"
