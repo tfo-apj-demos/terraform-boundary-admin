@@ -1,3 +1,7 @@
+locals {
+  tfc_token = vault_terraform_cloud_secret_creds.this.token
+}
+
 terraform {
   required_providers {
     tfe = {
@@ -20,6 +24,6 @@ provider "boundary" {
 
 provider "tfe" {
   organization = "tfo-apj-demo"
-  token = vault_terraform_cloud_secret_creds.this.token
+  token = local.tfc_token
 }
 
