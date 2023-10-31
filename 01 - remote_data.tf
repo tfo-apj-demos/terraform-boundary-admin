@@ -3,7 +3,7 @@ data "tfe_outputs" "vault_admin" {
   workspace    = "vault-admin"
 }
 
-resource "vault_terraform_cloud_secret_creds" "token" {
+resource "vault_terraform_cloud_secret_creds" "this" {
   backend = "terraform"
   role    = "boundary_admins"
 }
