@@ -1,7 +1,3 @@
-locals {
-  tfc_token = vault_terraform_cloud_secret_creds.this.token
-}
-
 terraform {
   required_providers {
     tfe = {
@@ -22,8 +18,10 @@ provider "boundary" {
   auth_method_id         = var.boundary_auth_method_id
 }
 
-provider "tfe" {
-  organization = "tfo-apj-demo"
-  token = local.tfc_token
-}
+# provider "tfe" {
+#   organization = "tfo-apj-demo"
+#   token = auth_login_token_file {
+#     filename = var.tfc_vault_dynamic_credentials.default.token_filename
+#   }
+# }
 
